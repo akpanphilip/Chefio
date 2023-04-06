@@ -40,7 +40,7 @@ class SubTitleTextWidget extends StatelessWidget {
       textAlign: TextAlign.center,
       style: TextStyle(
         color: Color(0xff9fa5c0),
-        fontSize: 17,
+        fontSize: 13,
         fontFamily: "Inter",
         fontWeight: FontWeight.w500,
         letterSpacing: 0.50,

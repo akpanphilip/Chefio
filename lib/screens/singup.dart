@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, sort_child_properties_last, avoid_unnecessary_containers
 
+import 'package:chefio/screens/email_confirm.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 
@@ -81,7 +82,8 @@ class _SignUpState extends State<SignUp> {
                   ),
                   SizedBox(height: 25),
                   ButtonWidget(
-                    tap: MaterialPageRoute(builder: (context) => SignUp()),
+                    tap:
+                        MaterialPageRoute(builder: (context) => EmailConfirm()),
                     text: 'Sign Up',
                     colors: Color(0xff1fcc79),
                   ),

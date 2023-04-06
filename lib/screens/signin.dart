@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, sort_child_properties_last
 
+import 'package:chefio/screens/password_recovery.dart';
 import 'package:chefio/screens/singup.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
@@ -48,7 +49,23 @@ class _SignInState extends State<SignIn> {
                   SizedBox(height: 10),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
-                    children: [Text("Forgot password?")],
+                    children: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return PasswordRecovery();
+                              },
+                            ),
+                          );
+                        },
+                        child: Text(
+                          "Forgot password?",
+                        ),
+                      )
+                    ],
                   ),
                   SizedBox(height: 60),
                   // ButtonWidget(text: "Login", colors: Color(0xff1fcc79)),
@@ -60,24 +77,6 @@ class _SignInState extends State<SignIn> {
                   SizedBox(height: 20),
                   Text('Or continue with'),
                   SizedBox(height: 20),
-                  // ElevatedButton(
-                  //   onPressed: () {},
-                  //   child: Row(
-                  //     mainAxisAlignment: MainAxisAlignment.center,
-                  //     children: [
-                  //       Icon(Icons.g_translate),
-                  //       SizedBox(width: 5),
-                  //       Text("Google")
-                  //     ],
-                  //   ),
-                  //   style: ElevatedButton.styleFrom(
-                  //       fixedSize: Size(300, 60),
-                  //       textStyle: TextStyle(
-                  //           fontSize: 20.0, fontWeight: FontWeight.bold),
-                  //       primary: Colors.red,
-                  //       // elevation: 15,
-                  //       shape: StadiumBorder()),
-                  // ),
                   ButtonWidget(
                     tap: MaterialPageRoute(builder: (context) => SignIn()),
                     text: 'Google',
@@ -86,7 +85,7 @@ class _SignInState extends State<SignIn> {
                   SizedBox(height: 20),
                   RichText(
                       text: TextSpan(
-                          text: "Don't have any account?",
+                          text: "Don't have any account? ",
                           style: TextStyle(color: Colors.black),
                           children: [
                         TextSpan(
