@@ -28,6 +28,7 @@ class Index extends StatelessWidget {
               ),
               SizedBox(height: 60),
               ButtonWidget(
+                tap: MaterialPageRoute(builder: (context) => SignIn()),
                 text: 'Get Started!',
                 colors: Color(0xff1fcc79),
               ),

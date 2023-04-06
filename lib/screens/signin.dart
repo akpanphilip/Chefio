@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, sort_child_properties_last
 
+import 'package:chefio/screens/singup.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/gestures.dart';
 
 import '../Widget/Config.dart';
 
@@ -15,9 +17,6 @@ class _SignInState extends State<SignIn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        // appBar: AppBar(
-        //     // backgroundColor: Colors.transparent,
-        //     ),
         body: Container(
             decoration: BoxDecoration(
               color: Colors.white,
@@ -52,7 +51,12 @@ class _SignInState extends State<SignIn> {
                     children: [Text("Forgot password?")],
                   ),
                   SizedBox(height: 60),
-                  ButtonWidget(text: "Login", colors: Color(0xff1fcc79)),
+                  // ButtonWidget(text: "Login", colors: Color(0xff1fcc79)),
+                  ButtonWidget(
+                    tap: MaterialPageRoute(builder: (context) => SignIn()),
+                    text: 'Login',
+                    colors: Color(0xff1fcc79),
+                  ),
                   SizedBox(height: 20),
                   Text('Or continue with'),
                   SizedBox(height: 20),
@@ -74,7 +78,11 @@ class _SignInState extends State<SignIn> {
                   //       // elevation: 15,
                   //       shape: StadiumBorder()),
                   // ),
-                  ButtonWidget(text: "Google", colors: Color(0xffFF5842)),
+                  ButtonWidget(
+                    tap: MaterialPageRoute(builder: (context) => SignIn()),
+                    text: 'Google',
+                    colors: Color(0xffFF5842),
+                  ),
                   SizedBox(height: 20),
                   RichText(
                       text: TextSpan(
@@ -82,10 +90,22 @@ class _SignInState extends State<SignIn> {
                           style: TextStyle(color: Colors.black),
                           children: [
                         TextSpan(
-                            text: 'Sign Up',
-                            style: TextStyle(
-                                color: Color(0xff1fcc79),
-                                fontWeight: FontWeight.bold))
+                          text: 'Sign Up',
+                          style: TextStyle(
+                              color: Color(0xff1fcc79),
+                              fontWeight: FontWeight.bold),
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return SignUp();
+                                  },
+                                ),
+                              );
+                            },
+                        )
                       ]))
                 ],
               ),

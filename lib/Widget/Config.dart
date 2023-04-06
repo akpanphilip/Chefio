@@ -54,16 +54,20 @@ class SubTitleTextWidget extends StatelessWidget {
 class ButtonWidget extends StatelessWidget {
   final String text;
   final Color colors;
+  final MaterialPageRoute tap;
   const ButtonWidget({
     super.key,
     required this.text,
+    required this.tap,
     required this.colors,
   });
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: () {
+        Navigator.push(context, tap);
+      },
       child: Text(
         text,
         textAlign: TextAlign.center,
@@ -120,4 +124,28 @@ class TextFieldWidget extends StatelessWidget {
               ),
             )));
   }
+}
+
+class ConfigApp {
+  static void goto(page, context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) {
+          return page;
+        },
+      ),
+    );
+  }
+}
+
+goto(page, context) {
+  Navigator.push(
+    context,
+    MaterialPageRoute(
+      builder: (context) {
+        return page;
+      },
+    ),
+  );
 }
