@@ -2,9 +2,8 @@
 
 import 'package:chefio/screens/email_confirm.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
-
 import '../Widget/Config.dart';
+import 'package:flutter/gestures.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});

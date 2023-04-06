@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, sort_child_properties_last
 
+import 'package:chefio/screens/home.dart';
 import 'package:chefio/screens/password_recovery.dart';
 import 'package:chefio/screens/singup.dart';
 import 'package:flutter/material.dart';
@@ -70,7 +71,7 @@ class _SignInState extends State<SignIn> {
                   SizedBox(height: 60),
                   // ButtonWidget(text: "Login", colors: Color(0xff1fcc79)),
                   ButtonWidget(
-                    tap: MaterialPageRoute(builder: (context) => SignIn()),
+                    tap: MaterialPageRoute(builder: (context) => Home()),
                     text: 'Login',
                     colors: Color(0xff1fcc79),
                   ),
